@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using LightpointTask.DAL.Entities;
@@ -7,14 +8,13 @@ namespace LightpointTask.DAL.EF
 {
     public class DatabaseContext : DbContext
     {
-        public DbSet<Product> Products { get; set; }
         public DbSet<Shop> Shops { get; set; }
-        public DbSet<ShopProduct> ShopProducts { get; set; }
-
-        static DatabaseContext()
-        {
-            Database.SetInitializer<DatabaseContext>(new CreateDatabaseIfNotExists<DatabaseContext>());
-        }
+        public DbSet<Product> Products { get; set; }
+        
+        //static DatabaseContext()
+        //{
+        //    Database.SetInitializer<DatabaseContext>(new StoreDbInitializer());
+        //}
 
         public DatabaseContext(string connectionString)
             : base(connectionString)
@@ -22,4 +22,13 @@ namespace LightpointTask.DAL.EF
 
         }
     }
+
+    //public class StoreDbInitializer : DropCreateDatabaseIfModelChanges<DatabaseContext>
+    //{
+    //    protected override void Seed(DatabaseContext db)
+    //    {
+    //        db.Shops.Add(new Shop { Name = "Colins" });
+    //        db.SaveChanges();
+    //    }
+    //}
 }

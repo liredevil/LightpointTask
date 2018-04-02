@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace LightpointTask.DAL.Entities
+namespace LightpointTask.Models
 {
-    public class Shop
+    public class ShopViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public DateTime TimeWorkFrom { get; set; }
         public DateTime TimeWorkTo { get; set; }
-
-        //public ICollection<ShopProduct> ShopsProduct { get; set; }
     }
 }

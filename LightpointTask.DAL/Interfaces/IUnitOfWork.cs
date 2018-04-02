@@ -9,8 +9,8 @@ namespace LightpointTask.DAL.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {
-        IRepository<Product> Products { get; }
         IRepository<Shop> Shops { get; }
+        IRepository<Product> Products { get; }
         void Save();
     }
 }

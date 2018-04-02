@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightpointTask", "LightpointTask\LightpointTask.csproj", "{5E168E83-C924-49D7-B68C-3232ED9F94E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightpointTask.DAL", "LightpointTask.DAL\LightpointTask.DAL.csproj", "{8D5E3034-2104-4C73-9D51-8C0524C8A12E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightpointTask.BLL", "LightpointTask.BLL\LightpointTask.BLL.csproj", "{915DDB7F-E2A1-4CFE-AE1D-BD1D78EC0240}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{5E168E83-C924-49D7-B68C-3232ED9F94E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E168E83-C924-49D7-B68C-3232ED9F94E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E168E83-C924-49D7-B68C-3232ED9F94E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D5E3034-2104-4C73-9D51-8C0524C8A12E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D5E3034-2104-4C73-9D51-8C0524C8A12E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D5E3034-2104-4C73-9D51-8C0524C8A12E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D5E3034-2104-4C73-9D51-8C0524C8A12E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{915DDB7F-E2A1-4CFE-AE1D-BD1D78EC0240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{915DDB7F-E2A1-4CFE-AE1D-BD1D78EC0240}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{915DDB7F-E2A1-4CFE-AE1D-BD1D78EC0240}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{915DDB7F-E2A1-4CFE-AE1D-BD1D78EC0240}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

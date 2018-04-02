@@ -8,22 +8,12 @@ namespace LightpointTask.DAL.Repositories
     public class EFUnitOfWork : IUnitOfWork
     {
         private DatabaseContext db;
-        private ProductRepository productRepository;
         private ShopRepository shopRepository;
+        private ProductRepositories productRepositories;
 
         public EFUnitOfWork(string connectionString)
         {
             db = new DatabaseContext(connectionString);
-        }
-
-        public IRepository<Product> Products
-        {
-            get
-            {
-                if (productRepository == null)
-                    productRepository = new ProductRepository(db);
-                return productRepository;
-            }
         }
 
         public IRepository<Shop> Shops
@@ -33,6 +23,16 @@ namespace LightpointTask.DAL.Repositories
                 if (shopRepository == null)
                     shopRepository = new ShopRepository(db);
                 return shopRepository;
+            }
+        }
+
+        public IRepository<Product> Products
+        {
+            get
+            {
+                if (productRepositories == null)
+                    productRepositories = new ProductRepositories(db);
+                return productRepositories;
             }
         }
 
