@@ -41,7 +41,7 @@ namespace LightpointTask.Controllers
                 {
                     var productDto = new ProductDTO { Name = product.Name, Description = product.Description };
                     productService.MakeProduct(productDto);
-                    //return Content("<h2>Магазин успешно добавлен</h2>");
+                    TempData["message"] = string.Format("product successful added");
                     return RedirectToAction("index");
                 }
             }
@@ -62,7 +62,7 @@ namespace LightpointTask.Controllers
             try
             {
                 productService.DeleteProduct(id);
-                //return Content("<h2>Магазин успешно удален</h2>");
+                TempData["message"] = string.Format("product successful deleted");
                 return RedirectToAction("index");
             }
             catch (ValidationException ex)

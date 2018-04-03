@@ -45,7 +45,7 @@ namespace LightpointTask.Controllers
                 {
                     var shopDto = new ShopDTO { Name = shop.Name, TimeWorkFrom = shop.TimeWorkFrom, TimeWorkTo = shop.TimeWorkTo };
                     shopService.MakeShop(shopDto);
-                    //return Content("<h2>Магазин успешно добавлен</h2>");
+                    TempData["message"] = string.Format("shop successful added");
                     return RedirectToAction("index");
                 }
             }
@@ -66,7 +66,7 @@ namespace LightpointTask.Controllers
             try
             {
                 shopService.DeleteShop(id);
-                //return Content("<h2>Магазин успешно удален</h2>");
+                TempData["message"] = string.Format("product successful deleted");
                 return RedirectToAction("index");
             }
             catch (ValidationException ex)
