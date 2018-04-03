@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using LightpointTask.BLL.Interfaces;
 using LightpointTask.BLL.DTO;
@@ -40,10 +37,13 @@ namespace LightpointTask.Controllers
         {
             try
             {
-                var productDto = new ProductDTO { Name = product.Name, Description = product.Description };
-                productService.MakeProduct(productDto);
-                //return Content("<h2>Магазин успешно добавлен</h2>");
-                return RedirectToAction("index");
+                if(ModelState.IsValid)
+                {
+                    var productDto = new ProductDTO { Name = product.Name, Description = product.Description };
+                    productService.MakeProduct(productDto);
+                    //return Content("<h2>Магазин успешно добавлен</h2>");
+                    return RedirectToAction("index");
+                }
             }
             catch (ValidationException ex)
             {

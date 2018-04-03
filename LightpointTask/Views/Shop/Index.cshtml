@@ -4,11 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Add Shop", "MakeShop")
-</p>
+<h2>list of stores</h2>
 
 <table class="table">
     <tr>
@@ -26,11 +22,14 @@
             </td>
             <td>
                 @Html.ActionLink("Delete", "DeleteShop", new { id = item.Id }) |
-                @Html.ActionLink("AddProductToShop", "GetListProducts", new { id = item.Id })
+                @Html.ActionLink("add product to the store", "GetListProducts", new { id = item.Id })
             </td>
         </tr>
     }
-
 </table>
+<div class="btn-group">
+    @Html.ActionLink("Home", "Index", "Home", null, new { @class = "btn btn-info" })
+    @Html.ActionLink("add store", "MakeShop", "Shop", null, new { @class = "btn btn-info" })
+</div>
 
 

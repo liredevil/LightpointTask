@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using LightpointTask.DAL.Entities;
 using LightpointTask.DAL.EF;
 using LightpointTask.DAL.Interfaces;
-using System.Data.Entity;
 
 namespace LightpointTask.DAL.Repositories
 {

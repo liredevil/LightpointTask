@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using LightpointTask.DAL.EF;
 using LightpointTask.DAL.Entities;
 using LightpointTask.DAL.Interfaces;
@@ -31,13 +28,6 @@ namespace LightpointTask.DAL.Repositories
 
         public IEnumerable<Product> GetProductById(int id)
         {
-
-            //return db.ShopProducts.Where(s => s.ShopId == id).Select(s => new
-            //{
-            //    Id = s.Product.Id,
-            //    Name = s.Product.Name,
-            //    Description = s.Product.Description
-            //}).ToList();
             return (from p in db.ShopProducts
                     where p.ShopId == id
                     select new
@@ -51,11 +41,6 @@ namespace LightpointTask.DAL.Repositories
                         Name = x.Name,
                         Description = x.Description
                     }).ToList();
-            //return db.ShopProducts.Where(s => s.ShopId == id).ToList();
         }
-
-
-
-        
     }
 }

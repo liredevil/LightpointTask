@@ -1,8 +1,6 @@
-﻿using System;
-using LightpointTask.BLL.DTO;
+﻿using LightpointTask.BLL.DTO;
 using LightpointTask.DAL.Entities;
 using LightpointTask.DAL.Interfaces;
-using LightpointTask.BLL.Infrastructure;
 using LightpointTask.BLL.Interfaces;
 using System.Collections.Generic;
 using AutoMapper;

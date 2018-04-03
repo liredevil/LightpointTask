@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using LightpointTask.BLL.Interfaces;
 using LightpointTask.BLL.DTO;
@@ -39,7 +36,7 @@ namespace LightpointTask.Controllers
                 var mapper = new MapperConfiguration(cfg => cfg.CreateMap<ProductDTO, ProductViewModel>()).CreateMapper();
                 var products = mapper.Map<IEnumerable<ProductDTO>, List<ProductViewModel>>(productDtos);
 
-                //return Content("<h2>Магазин успешно удален</h2>");
+
                 return View(products);
             }
             catch (ValidationException ex)

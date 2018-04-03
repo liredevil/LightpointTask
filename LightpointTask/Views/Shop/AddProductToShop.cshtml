@@ -6,7 +6,6 @@
 
 <h2>AddProductToShop</h2>
 
-
 <table class="table">
     <tr>
         <th>
@@ -30,15 +29,11 @@
                 </td>
                 <td>
                     <input type="hidden" value="@item.Id" name="id" />
-                    @*@Html.ActionLink("Add", "AddProductToShop", new { a = item.Id }) |*@
                     <a href="@Url.Action("AddProductToShop", "Shop", new { b = item.Id })"><p>Add</p></a>
                     <input type="submit" value="Отправить" class="btn btn-primary" />
                 </td>
             </tr>
-            <a class="showElement" href='@Url.Action("Upload", "Image")'></a>
         }
 
     }
-
-
 </table>

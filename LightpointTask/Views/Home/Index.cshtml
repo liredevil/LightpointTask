@@ -4,11 +4,8 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Home</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -23,21 +20,26 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TimeWorkFrom)
+            @Html.DisplayFor(modelItem => item.TimeWorkFrom.TimeOfDay)
+            
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TimeWorkTo)
+            @Html.DisplayFor(modelItem => item.TimeWorkTo.TimeOfDay)
         </td>
         <td>
-            @Html.ActionLink("Посмотреть все товары", "ShowProductShop", new { id=item.Id })
+            @Html.ActionLink("show all products", "ShowProductShop", new { id=item.Id })
         </td>
     </tr>
 }
-
 </table>
+<div class="btn-group">
+    @Html.ActionLink("List of stores", "Index", "Shop", null, new { @class = "btn btn-info" })
+    @Html.ActionLink("List of products", "Index", "Product", null, new { @class = "btn btn-info" })
+</div>

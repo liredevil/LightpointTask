@@ -4,11 +4,8 @@
     ViewBag.Title = "GetListProducts";
 }
 
-<h2>GetListProducts</h2>
+<h2>Product List</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -20,18 +17,22 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "AddProductToShop", new { id=item.Id }) |
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Add", "AddProductToShop", new { id=item.Id })
+            </td>
+        </tr>
+    }
 </table>
+<div class="btn-group">
+    @Html.ActionLink("Home", "Index", "Home", null, new { @class = "btn btn-info" })
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
+</div>

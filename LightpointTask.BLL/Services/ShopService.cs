@@ -1,5 +1,4 @@
-﻿using System;
-using LightpointTask.BLL.DTO;
+﻿using LightpointTask.BLL.DTO;
 using LightpointTask.DAL.Entities;
 using LightpointTask.DAL.Interfaces;
 using LightpointTask.BLL.Infrastructure;
@@ -20,6 +19,10 @@ namespace LightpointTask.BLL.Services
 
         public void MakeShop(ShopDTO shopDto)
         {
+            if(shopDto == null)
+            {
+                throw new ValidationException("Введите данные", "");
+            }
             Shop shop = new Shop
             {
                 Name = shopDto.Name,
