@@ -10,7 +10,7 @@ namespace LightpointTask.DAL.EF
     {
         public DbSet<Shop> Shops { get; set; }
         public DbSet<Product> Products { get; set; }
-        
+        public DbSet<ShopProduct> ShopProducts { get; set; }
         //static DatabaseContext()
         //{
         //    Database.SetInitializer<DatabaseContext>(new StoreDbInitializer());

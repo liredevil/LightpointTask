@@ -49,12 +49,15 @@
   <ItemGroup>
     <Compile Include="DTO\ProductDTO.cs" />
     <Compile Include="DTO\ShopDTO.cs" />
+    <Compile Include="DTO\ShopProductDTO.cs" />
     <Compile Include="Infrastructure\ServiceModule.cs" />
     <Compile Include="Infrastructure\ValidationException.cs" />
     <Compile Include="Interfaces\IProductService.cs" />
+    <Compile Include="Interfaces\IShopProductService.cs" />
     <Compile Include="Interfaces\IShopService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Services\ProductShopService.cs" />
     <Compile Include="Services\ShopService.cs" />
   </ItemGroup>
   <ItemGroup>

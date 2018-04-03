@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace LightpointTask.DAL.Entities
 {
-    public class Product
+    public class ShopProduct
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
 
-        public ICollection<ShopProduct> ShopProducts { get; set; }
+        public int ShopId { get; set; }
+        public Shop Shop { get; set; }
+
+        public int ProductId { get; set; }
+        public Product Product { get; set; }
     }
 }

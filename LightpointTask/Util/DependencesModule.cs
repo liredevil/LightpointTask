@@ -10,6 +10,7 @@ namespace LightpointTask.Util
         {
             Bind<IShopService>().To<ShopService>();
             Bind<IProductService>().To<ProductService>();
+            Bind<IShopProductService>().To<ProductShopService>();
         }
     }
 }

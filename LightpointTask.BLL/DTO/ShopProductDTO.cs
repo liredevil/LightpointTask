@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace LightpointTask.BLL.DTO
 {
-    public class ShopDTO
+    public class ShopProductDTO
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public DateTime TimeWorkFrom { get; set; }
-        public DateTime TimeWorkTo { get; set; }
-
-        public ICollection<ShopProduct> ShopsProduct { get; set; }
+        public int ShopId { get; set; }
+        public int ProductId { get; set; }
+        public Shop Shop { get; set; }
+        public Product Product { get; set; }
     }
 }

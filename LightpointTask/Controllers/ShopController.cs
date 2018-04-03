@@ -14,11 +14,15 @@ namespace LightpointTask.Controllers
     public class ShopController : Controller
     {
         IShopService shopService;
+        IShopProductService shopProductService;
+        IProductService productService;
 
-        
-        public ShopController(IShopService service)
+
+        public ShopController(IShopService shopService, IShopProductService shopProductService,IProductService productService)
         {
-            shopService = service;
+            this.shopService = shopService;
+            this.shopProductService = shopProductService;
+            this.productService = productService;
         }
 
         public ActionResult Index()
@@ -29,6 +33,7 @@ namespace LightpointTask.Controllers
 
             return View(shops);
         }
+
         public ActionResult MakeShop()
         {
             return View();
@@ -70,9 +75,52 @@ namespace LightpointTask.Controllers
             }
             return RedirectToAction("index");
         }
+
+        //[HttpGet]
+        //public ActionResult AddProductToShop(int id)
+        //{
+        //    IEnumerable<ProductDTO> productDtos = productService.GetProducts();
+        //    var mapper = new MapperConfiguration(cfg => cfg.CreateMap<ProductDTO, ProductViewModel>()).CreateMapper();
+        //    var shops = mapper.Map<IEnumerable<ProductDTO>, List<ProductViewModel>>(productDtos);
+
+        //    ShopProductViewModel.ShopId = id;
+
+        //    return View(shops);
+        //}
+
+        public ActionResult GetListProducts(int id)
+        {
+            IEnumerable<ProductDTO> productDtos = productService.GetProducts();
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<ProductDTO, ProductViewModel>()).CreateMapper();
+            var products = mapper.Map<IEnumerable<ProductDTO>, List<ProductViewModel>>(productDtos);
+
+            ShopProductViewModel.ShopId = id;
+
+            return View(products);
+        }
+
+        
+        public ActionResult AddProductToShop(ProductViewModel productView)
+        {
+            try
+            {
+                shopProductService.AddShopProduct(productView.Id, ShopProductViewModel.ShopId);
+                //return Content("<h2>Магазин успешно добавлен</h2>");
+                return RedirectToAction("index");
+            }
+            catch (ValidationException ex)
+            {
+                ModelState.AddModelError(ex.Property, ex.Message);
+            }
+            
+            return RedirectToAction("index");
+        }
+
         protected override void Dispose(bool disposing)
         {
+            shopProductService.Dispose();
             shopService.Dispose();
+            productService.Dispose();
             base.Dispose(disposing);
         }
     }

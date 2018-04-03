@@ -13,6 +13,6 @@ namespace LightpointTask.DAL.Entities
         public DateTime TimeWorkFrom { get; set; }
         public DateTime TimeWorkTo { get; set; }
 
-        //public ICollection<ShopProduct> ShopsProduct { get; set; }
+        public ICollection<ShopProduct> ShopsProduct { get; set; }
     }
 }

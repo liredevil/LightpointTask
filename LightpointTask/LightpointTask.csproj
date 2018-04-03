@@ -169,6 +169,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\ShopProductViewModel.cs" />
     <Compile Include="Models\ShopViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\DependencesModule.cs" />
@@ -244,7 +245,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -260,6 +260,10 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\MakeProduct.cshtml" />
     <Content Include="Views\Product\DeleteProduct.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shop\AddProductToShop.cshtml" />
+    <Content Include="Views\Home\ShowProductShop.cshtml" />
+    <Content Include="Views\Shop\GetListProducts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

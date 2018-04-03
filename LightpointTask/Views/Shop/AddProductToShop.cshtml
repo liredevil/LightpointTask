@@ -1,0 +1,44 @@
+﻿@model IEnumerable<LightpointTask.Models.ProductViewModel>
+
+@{
+    ViewBag.Title = "AddProductToShop";
+}
+
+<h2>AddProductToShop</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+    @using (Html.BeginForm("AddProductToShop", "Shop", FormMethod.Post))
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    <input type="hidden" value="@item.Id" name="id" />
+                    @*@Html.ActionLink("Add", "AddProductToShop", new { a = item.Id }) |*@
+                    <a href="@Url.Action("AddProductToShop", "Shop", new { b = item.Id })"><p>Add</p></a>
+                    <input type="submit" value="Отправить" class="btn btn-primary" />
+                </td>
+            </tr>
+            <a class="showElement" href='@Url.Action("Upload", "Image")'></a>
+        }
+
+    }
+
+
+</table>

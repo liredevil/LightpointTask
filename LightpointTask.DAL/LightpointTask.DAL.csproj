@@ -50,11 +50,14 @@
     <Compile Include="EF\DatabaseContext.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Shop.cs" />
+    <Compile Include="Entities\ShopProduct.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IShopProduct.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EFUnitOfWork.cs" />
     <Compile Include="Repositories\ProductRepositories.cs" />
+    <Compile Include="Repositories\ShopProductRepositories.cs" />
     <Compile Include="Repositories\ShopRepository.cs" />
   </ItemGroup>
   <ItemGroup>

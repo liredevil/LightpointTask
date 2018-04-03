@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace LightpointTask.DAL.Interfaces
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IShopProduct<T> where T : class
     {
-        IRepository<Shop> Shops { get; }
-        IRepository<Product> Products { get; }
-        IShopProduct<ShopProduct> ShopProducts { get; }
-        void Save();
+        void AddDate(int productId, int shopId);
+        IEnumerable<Product> GetProductById(int id);
     }
 }

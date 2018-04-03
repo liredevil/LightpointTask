@@ -10,6 +10,7 @@ namespace LightpointTask.DAL.Repositories
         private DatabaseContext db;
         private ShopRepository shopRepository;
         private ProductRepositories productRepositories;
+        private ShopProductRepositories shopProductRepositories;
 
         public EFUnitOfWork(string connectionString)
         {
@@ -33,6 +34,16 @@ namespace LightpointTask.DAL.Repositories
                 if (productRepositories == null)
                     productRepositories = new ProductRepositories(db);
                 return productRepositories;
+            }
+        }
+
+        public IShopProduct<ShopProduct> ShopProducts
+        {
+            get
+            {
+                if (shopProductRepositories == null)
+                    shopProductRepositories = new ShopProductRepositories(db);
+                return shopProductRepositories;
             }
         }
 
